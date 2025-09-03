@@ -50,12 +50,12 @@ public class Arm {
         }
 
         @Override
-        protected void initialize(com.jumpypants.murphy.RobotContext robotContext) {
+        protected void initialize(RobotContext robotContext) {
             EXTENSION_PID.setSetPoint(targetPosition);
         }
 
         @Override
-        protected boolean run(com.jumpypants.murphy.RobotContext robotContext) {
+        protected boolean run(RobotContext robotContext) {
             return Math.abs(EXTENSION_MOTOR.getCurrentPosition() - targetPosition) > 10; // Tolerance of 10 ticks
         }
     }
@@ -69,12 +69,12 @@ public class Arm {
         }
 
         @Override
-        protected void initialize(com.jumpypants.murphy.RobotContext robotContext) {
+        protected void initialize(RobotContext robotContext) {
             SHOULDER_PID.setSetPoint(targetPosition);
         }
 
         @Override
-        protected boolean run(com.jumpypants.murphy.RobotContext robotContext) {
+        protected boolean run(RobotContext robotContext) {
             return Math.abs(SHOULDER_MOTOR.getCurrentPosition() - targetPosition) > 5; // Tolerance of 5 ticks
         }
     }
